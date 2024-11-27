@@ -6,7 +6,7 @@ import ReestablecerExitoso from './pantallas/ReestablecerExitosoScreen';
 import ReestablecerConfirm from './pantallas/ReestablecerConfirmScreen';
 
 export default function App() {
-  const [screen, setScreen] = useState('ReestablecerConfirm');
+  const [screen, setScreen] = useState('Landing');
   const [sesion, setSesion] = useState(false);
 
   const renderScreen = () => {
