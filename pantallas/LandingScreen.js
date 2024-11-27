@@ -29,7 +29,7 @@ const Landing = ({ setScreen, sesion, setSesion }) => (
         <View style={styles.buttonContainer}>
           <Button
             title="Ver perfil"
-            onPress={() => setScreen('Login')}></Button>
+            onPress={() => setScreen('Perfil')}></Button>
           <Button title="Cambiar contraseña"></Button>
         </View>
       )}

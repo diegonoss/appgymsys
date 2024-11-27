@@ -4,6 +4,7 @@ import Login from './pantallas/LoginScreen';
 import Reestablecer from './pantallas/ReestablecerScreen';
 import ReestablecerExitoso from './pantallas/ReestablecerExitosoScreen';
 import ReestablecerConfirm from './pantallas/ReestablecerConfirmScreen';
+import Perfil from './pantallas/PerfilScreen';
 
 export default function App() {
   const [screen, setScreen] = useState('Landing');
@@ -21,6 +22,8 @@ export default function App() {
         return <ReestablecerExitoso setScreen={setScreen} sesion={sesion} screen={screen}/>;
       case 'ReestablecerConfirm':
         return <ReestablecerConfirm setScreen={setScreen} sesion={sesion} screen={screen}/>;
+      case 'Perfil':
+        return <Perfil setScreen={setScreen} sesion={sesion} screen={screen}/>;
       default:
         return <Landing setScreen={setScreen} sesion={sesion} setSesion={setSesion}/>;
     }
