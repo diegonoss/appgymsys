@@ -9,7 +9,7 @@ import {
 import Navbar from '../components/Navbar';
 import usePerfilData from '../hooks/usePerfilData';
 
-const PerfilScreen = ({ setScreen, screen }) => {
+const PerfilScreen = ({ setScreen, sesion, screen, setSesion }) => {
   const { perfil, loading } = usePerfilData();
 
   if (loading) {
@@ -25,6 +25,9 @@ const PerfilScreen = ({ setScreen, screen }) => {
         title="Perfil"
         onNavigateBack={() => setScreen('Landing')}
         screen={screen}
+        setScreen={setScreen}
+        sesion={sesion}
+        setSesion={setSesion}
       />
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.profileContainer}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-
+import useCerrarSesion from '../hooks/useCerrarSesion';
 const Navbar = ({
   title,
   screen,
@@ -8,7 +8,9 @@ const Navbar = ({
   onNavigateToLogin,
   sesion,
   setSesion,
+  setScreen,
 }) => {
+  const handleCerrarSesion = useCerrarSesion(setSesion, setScreen);
   return (
     <View style={styles.navbar}>
       {/* Botón de retroceso */}
@@ -23,10 +25,13 @@ const Navbar = ({
           <Text style={styles.buttonText}>Iniciar Sesión</Text>
         </TouchableOpacity>
       ) : (
-        screen !== 'Login' && screen !== 'Reestablecer' && screen !== 'ReestablecerConfirm' && screen !== 'ReestablecerExitoso' && (
+        screen !== 'Login' &&
+        screen !== 'Reestablecer' &&
+        screen !== 'ReestablecerConfirm' &&
+        screen !== 'ReestablecerExitoso' && (
           <TouchableOpacity
             style={styles.button}
-            onPress={() => setSesion(false)}>
+            onPress={handleCerrarSesion}>
             <Text style={styles.buttonText}>Cerrar Sesión</Text>
           </TouchableOpacity>
         )

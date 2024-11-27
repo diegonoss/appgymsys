@@ -9,7 +9,6 @@ import Perfil from './pantallas/PerfilScreen';
 export default function App() {
   const [screen, setScreen] = useState('Landing');
   const [sesion, setSesion] = useState(false);
-
   const renderScreen = () => {
     switch (screen) {
       case 'Landing':
@@ -23,7 +22,7 @@ export default function App() {
       case 'ReestablecerConfirm':
         return <ReestablecerConfirm setScreen={setScreen} sesion={sesion} screen={screen}/>;
       case 'Perfil':
-        return <Perfil setScreen={setScreen} sesion={sesion} screen={screen}/>;
+        return <Perfil setScreen={setScreen} sesion={sesion} screen={screen} setSesion={setSesion}/>;
       default:
         return <Landing setScreen={setScreen} sesion={sesion} setSesion={setSesion}/>;
     }
